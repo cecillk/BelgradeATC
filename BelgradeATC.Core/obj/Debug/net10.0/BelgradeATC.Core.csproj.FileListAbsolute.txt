@@ -21,3 +21,15 @@
 /Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/obj/Debug/net10.0/refint/BelgradeATC.Core.dll
 /Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.pdb
 /Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/obj/Debug/net10.0/ref/BelgradeATC.Core.dll
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/bin/Debug/net10.0/BelgradeATC.Core.deps.json
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/bin/Debug/net10.0/BelgradeATC.Core.dll
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/bin/Debug/net10.0/BelgradeATC.Core.pdb
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.GeneratedMSBuildEditorConfig.editorconfig
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.AssemblyInfoInputs.cache
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.AssemblyInfo.cs
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.csproj.CoreCompileInputs.cache
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.sourcelink.json
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.dll
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/refint/BelgradeATC.Core.dll
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/BelgradeATC.Core.pdb
+/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/Debug/net10.0/ref/BelgradeATC.Core.dll

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/BelgradeATC.Core.csproj": {}
+    "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/BelgradeATC.Core.csproj": {}
   },
   "projects": {
-    "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/BelgradeATC.Core.csproj": {
+    "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/BelgradeATC.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/BelgradeATC.Core.csproj",
+        "projectUniqueName": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/BelgradeATC.Core.csproj",
         "projectName": "BelgradeATC.Core",
-        "projectPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/BelgradeATC.Core.csproj",
+        "projectPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/BelgradeATC.Core.csproj",
         "packagesPath": "/Users/cecilklufio/.nuget/packages/",
-        "outputPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Core/obj/",
+        "outputPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Core/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/cecilklufio/.nuget/NuGet/NuGet.Config"

@@ -2424,11 +2424,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/BelgradeATC.API.csproj",
+      "projectUniqueName": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.API/BelgradeATC.API.csproj",
       "projectName": "BelgradeATC.API",
-      "projectPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/BelgradeATC.API.csproj",
+      "projectPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.API/BelgradeATC.API.csproj",
       "packagesPath": "/Users/cecilklufio/.nuget/packages/",
-      "outputPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/obj/",
+      "outputPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/cecilklufio/.nuget/NuGet/NuGet.Config"
@@ -2443,11 +2443,11 @@
         "net10.0": {
           "targetAlias": "net10.0",
           "projectReferences": {
-            "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Application/BelgradeATC.Application.csproj": {
-              "projectPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Application/BelgradeATC.Application.csproj"
+            "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Application/BelgradeATC.Application.csproj": {
+              "projectPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Application/BelgradeATC.Application.csproj"
             },
-            "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj": {
-              "projectPath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj"
+            "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj": {
+              "projectPath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj"
             }
           }
         }

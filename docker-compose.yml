@@ -20,6 +20,8 @@ services:
       - postgres
     environment:
       - ConnectionStrings__DefaultConnection=Host=postgres;Port=5432;Database=belgrade_atc;Username=postgres;Password=postgres
+      - ParkingConfig__AirlinerSpots=5
+      - ParkingConfig__PrivateSpots=10
 
 volumes:
   postgres_data:

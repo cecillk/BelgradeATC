@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l59ar/F6yuo=",
+  "dgSpecHash": "mW7lHA9YefY=",
   "success": true,
-  "projectFilePath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj",
+  "projectFilePath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Infrastructure/BelgradeATC.Infrastructure.csproj",
   "expectedPackageFiles": [
     "/Users/cecilklufio/.nuget/packages/humanizer.core/2.14.1/humanizer.core.2.14.1.nupkg.sha512",
     "/Users/cecilklufio/.nuget/packages/mediatr/14.1.0/mediatr.14.1.0.nupkg.sha512",
