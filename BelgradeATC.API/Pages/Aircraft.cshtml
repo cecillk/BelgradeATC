@@ -1,0 +1,37 @@
+@page
+@model BelgradeATC.API.Pages.AircraftModel
+@{
+    ViewData["Title"] = "Aircraft";
+}
+
+<h2 class="mb-4">Aircraft</h2>
+
+<table class="table table-bordered table-sm">
+    <thead>
+        <tr>
+            <th>Call Sign</th>
+            <th>Type</th>
+            <th>State</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Altitude</th>
+            <th>Heading</th>
+            <th>Last Seen</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var aircraft in Model.Aircrafts)
+        {
+            <tr>
+                <td>@aircraft.CallSign</td>
+                <td>@aircraft.Type</td>
+                <td>@aircraft.State</td>
+                <td>@aircraft.Latitude</td>
+                <td>@aircraft.Longitude</td>
+                <td>@aircraft.Altitude</td>
+                <td>@aircraft.Heading</td>
+                <td>@aircraft.LastSeen.ToString("yyyy-MM-dd HH:mm:ss")</td>
+            </tr>
+        }
+    </tbody>
+</table>

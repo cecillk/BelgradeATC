@@ -1,0 +1,59 @@
+is_global = true
+build_property.TargetFramework = net10.0
+build_property.TargetFramework = net10.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.TargetFrameworkIdentifier = .NETCoreApp
+build_property.TargetFrameworkVersion = v10.0
+build_property.RootNamespace = BelgradeATC.API
+build_property.RootNamespace = BelgradeATC.API
+build_property.ProjectDir = /Users/cecilklufio/BelgradeATC copy/
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = /Users/cecilklufio/BelgradeATC copy
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 10.0
+build_property.EnableCodeStyleSeverity = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/Aircraft.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL0FpcmNyYWZ0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL0luZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL0xvZ2luLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/Logs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL0xvZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL1NoYXJlZC9fTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL19WaWV3SW1wb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[/Users/cecilklufio/BelgradeATC copy/BelgradeATC.API/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QmVsZ3JhZGVBVEMuQVBJL1BhZ2VzL19WaWV3U3RhcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

@@ -1,0 +1,107 @@
+@page
+@model BelgradeATC.Pages.IndexModel
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+<h2 class="mb-4">Belgrade ATC - Dashboard</h2>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">Weather</div>
+            <div class="card-body">
+                @if (Model.Weather != null)
+                {
+                    <p><strong>Description:</strong> @Model.Weather.Description</p>
+                    <p><strong>Temperature:</strong> @Model.Weather.Temperature °C</p>
+                    <p><strong>Visibility:</strong> @Model.Weather.Visibility m</p>
+                    <p><strong>Wind Speed:</strong> @Model.Weather.Wind.Speed m/s</p>
+                    <p><strong>Wind Direction:</strong> @Model.Weather.Wind.Deg °</p>
+                    <p><strong>Last Update:</strong> @Model.Weather.LastUpdate</p>
+                }
+                else
+                {
+                    <p class="text-muted">No weather data yet.</p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">Parking Overview</div>
+            <div class="card-body">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>Spot</th>
+                            <th>Type</th>
+                            <th>Occupied By</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var spot in Model.ParkingSpots)
+                        {
+                            <tr>
+                                <td>@spot.SpotNumber</td>
+                                <td>@spot.Type</td>
+                                <td>@(spot.OccupiedBy ?? "Free")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" id="logs-block">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">Recent State Changes (last 10)</div>
+            <div class="card-body">
+                <table class="table table-bordered table-sm">
+                    <thead>
+                        <tr>
+                            <th>Aircraft</th>
+                            <th>Requested State</th>
+                            <th>Outcome</th>
+                            <th>Timestamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logs-table-body">
+                        @foreach (var log in Model.RecentLogs)
+                        {
+                            <tr>
+                                <td>@log.Aircraft?.CallSign</td>
+                                <td>@log.RequestedState</td>
+                                <td>@log.Outcome</td>
+                                <td>@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    setInterval(function () {
+        fetch('/api/logs/recent')
+            .then(r => r.json())
+            .then(logs => {
+                var body = document.getElementById('logs-table-body');
+                body.innerHTML = logs.map(l => `
+                    <tr>
+                        <td>${l.aircraft.callSign}</td>
+                        <td>${l.requestedState}</td>
+                        <td>${l.outcome}</td>
+                        <td>${l.timestamp}</td>
+                    </tr>`).join('');
+            });
+    }, 10000);
+</script>

@@ -1,0 +1,41 @@
+@page
+@using BelgradeATC.Core.Entities
+@model BelgradeATC.API.Pages.LogsModel
+@{
+  ViewData["Title"] = "Logs";
+}
+
+<h2 class="mb-4">State Change Logs</h2>
+
+<table class="table table-bordered table-sm">
+  <thead>
+    <tr>
+      <th>Aircraft</th>
+      <th>Requested State</th>
+      <th>Outcome</th>
+      <th>Reason</th>
+      <th>Timestamp</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var log in Model.RecentLogs)
+    {
+      <tr>
+        <td>@log.Aircraft?.CallSign</td>
+        <td>@log.RequestedState</td>
+        <td>
+          @if (log.Outcome == LogOutcome.Accepted)
+          {
+            <span class="badge bg-success">Accepted</span>
+          }
+          else
+          {
+            <span class="badge bg-danger">Rejected</span>
+          }
+        </td>
+        <td>@log.Reason</td>
+        <td>@log.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+      </tr>
+    }
+  </tbody>
+</table>
