@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NpBT9Xuf/QY=",
+  "dgSpecHash": "VlFVGc5wKjI=",
   "success": true,
-  "projectFilePath": "/Users/cecilklufio/BelgradeATC copy/BelgradeATC.Application/BelgradeATC.Application.csproj",
+  "projectFilePath": "/Users/cecilklufio/BelgradeATC Project/BelgradeATC.Application/BelgradeATC.Application.csproj",
   "expectedPackageFiles": [
     "/Users/cecilklufio/.nuget/packages/mediatr/14.1.0/mediatr.14.1.0.nupkg.sha512",
     "/Users/cecilklufio/.nuget/packages/mediatr.contracts/2.0.1/mediatr.contracts.2.0.1.nupkg.sha512",
