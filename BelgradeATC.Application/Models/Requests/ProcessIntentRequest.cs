@@ -3,9 +3,9 @@ using BelgradeATC.Core.Enums;
 
 namespace BelgradeATC.Application.Models.Requests;
 
-public class ProcesIntentRequest
+public class ProcessIntentRequest
 {
-  public required string CallSign { get; set; }
+  public required string CallSign { get; set; } = string.Empty; 
   public AircraftState RequestedState { get; set; }
 
 }

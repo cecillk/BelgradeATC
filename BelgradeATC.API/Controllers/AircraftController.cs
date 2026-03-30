@@ -12,20 +12,20 @@ namespace BelgradeATC.API.Controllers;
 [Authorize(AuthenticationSchemes = AircraftAuthHandler.SchemeName)]
 public class AircraftController(IMediator mediator, IWeatherStore weatherStore) : ControllerBase
 {
-    [HttpPut("api/{call_sign}/location")]
-    public async Task<IActionResult> UpdateLocation(string call_sign, [FromBody] UpdateLocationCommand command)
+    [HttpPut("api/{callSign}/location")]
+    public async Task<IActionResult> UpdateLocation(string callSign, [FromBody] UpdateLocationCommand command)
     {
-        command.CallSign = call_sign;
+        command.CallSign = callSign;
         var success = await mediator.Send(command);
 
         if (!success) return NotFound();
         return NoContent();
     }
 
-    [HttpPost("api/{call_sign}/intent")]
-    public async Task<IActionResult> ProcessIntent(string call_sign, [FromBody] ProcessIntentCommand command)
+    [HttpPost("api/{callSign}/intent")]
+    public async Task<IActionResult> ProcessIntent(string callSign, [FromBody] ProcessIntentCommand command)
     {
-        command.CallSign = call_sign;
+        command.CallSign = callSign;
         var result = await mediator.Send(command);
 
         if (!result.Success) return Conflict();
@@ -33,8 +33,8 @@ public class AircraftController(IMediator mediator, IWeatherStore weatherStore) 
     }
 
     [AllowAnonymous]
-    [HttpGet("/api/public/{call_sign}/weather")]
-    public IActionResult Weather(string call_sign)
+    [HttpGet("/api/public/weather")]
+    public IActionResult Weather()
     {
         var request = weatherStore.GetLatest();
         if (request == null)

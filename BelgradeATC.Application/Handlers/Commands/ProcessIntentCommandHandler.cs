@@ -4,28 +4,22 @@ using BelgradeATC.Application.Models.Requests;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BelgradeATC.Application.Commands;
+namespace BelgradeATC.Application.Handlers.Commands;
 
-public class ProcessIntentCommandHandler : IRequestHandler<ProcessIntentCommand, ProcessIntentResult>
+public class ProcessIntentCommandHandler(IAircraftService aircraftService, ILogger<ProcessIntentCommandHandler> logger)
+    : IRequestHandler<ProcessIntentCommand, ProcessIntentResult>
 {
-    private readonly IAircraftService _aircraftService;
-    private readonly ILogger<ProcessIntentCommandHandler> _logger;
-
-    public ProcessIntentCommandHandler(IAircraftService aircraftService, ILogger<ProcessIntentCommandHandler> logger)
-    {
-        _aircraftService = aircraftService;
-        _logger = logger;
-    }
+    private readonly ILogger<ProcessIntentCommandHandler> _logger = logger;
 
     public async Task<ProcessIntentResult> Handle(ProcessIntentCommand command, CancellationToken cancellationToken)
     {
-        ProcesIntentRequest request = new ProcesIntentRequest
+        var request = new ProcessIntentRequest
         {
             CallSign = command.CallSign,
             RequestedState = command.RequestedState
         };
 
-        var response = await _aircraftService.ProcessIntentAsync(request);
+        var response = await aircraftService.ProcessIntentAsync(request);
 
         return new ProcessIntentResult
         {
