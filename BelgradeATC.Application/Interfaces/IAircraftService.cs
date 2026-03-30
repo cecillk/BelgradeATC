@@ -8,5 +8,5 @@ namespace BelgradeATC.Application.Interfaces;
 public interface IAircraftService
 {
     Task<bool> UpdateLocationAsync(UpdateLocationRequest request);
-    Task<ProcesIntentResponse> ProcessIntentAsync(ProcesIntentRequest request);
+    Task<ProcesIntentResponse> ProcessIntentAsync(ProcessIntentRequest request);
 }
