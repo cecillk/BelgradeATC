@@ -85,7 +85,7 @@ public class AircraftAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> op
         return AuthenticateResult.Success(ticket);
     }
 
-    public static (bool IsValid, string? Error) VerifySignature(string publicKeyPem, string message, byte[] signature)
+    private static (bool IsValid, string? Error) VerifySignature(string publicKeyPem, string message, byte[] signature)
     {
         try
         {
