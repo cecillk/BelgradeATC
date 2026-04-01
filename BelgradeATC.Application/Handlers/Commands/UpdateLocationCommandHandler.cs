@@ -4,18 +4,14 @@ using BelgradeATC.Application.Models.Requests;
 using MediatR;
 using Microsoft.Extensions.Logging;
 
-namespace BelgradeATC.Application.Commands;
+namespace BelgradeATC.Application.Handlers.Commands;
 
-public class UpdateLocationCommandHandler : IRequestHandler<UpdateLocationCommand, bool>
+public class UpdateLocationCommandHandler(
+    IAircraftService aircraftService,
+    ILogger<UpdateLocationCommandHandler> logger)
+    : IRequestHandler<UpdateLocationCommand, bool>
 {
-    private readonly IAircraftService _aircraftService;
-    private readonly ILogger<UpdateLocationCommandHandler> _logger;
-
-    public UpdateLocationCommandHandler(IAircraftService aircraftService, ILogger<UpdateLocationCommandHandler> logger)
-    {
-        _aircraftService = aircraftService;
-        _logger = logger;
-    }
+    private readonly ILogger<UpdateLocationCommandHandler> _logger = logger;
 
     public async Task<bool> Handle(UpdateLocationCommand command, CancellationToken cancellationToken)
     {
@@ -29,7 +25,7 @@ public class UpdateLocationCommandHandler : IRequestHandler<UpdateLocationComman
             Latitude = command.Latitude
         };
 
-        return await _aircraftService.UpdateLocationAsync(request);
+        return await aircraftService.UpdateLocationAsync(request);
 
     }
 }

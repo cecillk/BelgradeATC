@@ -1,15 +1,19 @@
 using BelgradeATC.Core.Entities;
 using BelgradeATC.Core.Enums;
+using BelgradeATC.Core.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 namespace BelgradeATC.Infrastructure.Data;
 
-public class DbSeeder(IConfiguration config, AppDbContext dbcontext)
+public class DbSeeder(IConfiguration config, AppDbContext dbcontext) : IDbSeeder
 {
   public async Task Process()
   {
-    var airlinerSpots = int.Parse(config["ParkingConfig:AirlinerSpots"]);
-    var privateSpots = int.Parse(config["ParkingConfig:PrivateSpots"]);
+    await dbcontext.Database.MigrateAsync();
+
+    var airlinerSpots = int.Parse(config["ParkingConfig:AirlinerSpots"] ?? throw new InvalidOperationException());
+    var privateSpots = int.Parse(config["ParkingConfig:PrivateSpots"] ?? throw new InvalidOperationException());
 
     if (airlinerSpots <= 0 || privateSpots <= 0)
       throw new InvalidOperationException("ParkingConfig values must be greater than 0.");
@@ -29,7 +33,7 @@ public class DbSeeder(IConfiguration config, AppDbContext dbcontext)
       .ToList();
 
     // Adding the missing spots
-    for (int i = existing.Count + 1; i <= configuredCount; i++)
+    for (var i = existing.Count + 1; i <= configuredCount; i++)
     {
       dbcontext.ParkingSpots.Add(new ParkingSpot
       {
@@ -46,7 +50,7 @@ public class DbSeeder(IConfiguration config, AppDbContext dbcontext)
     }
   }
 
-  public static string GenerateSpotNumber(AircraftType type, int index)
+  private static string GenerateSpotNumber(AircraftType type, int index)
   {
     var prefix = type == AircraftType.Airliner ? "A" : "P";
     return $"{prefix}{index}";

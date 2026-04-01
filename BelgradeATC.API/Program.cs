@@ -2,6 +2,7 @@ using System.Text.Json.Serialization;
 using BelgradeATC.Application.Commands;
 using BelgradeATC.Application.Interfaces;
 using BelgradeATC.Application.Services;
+using BelgradeATC.Core.Interfaces;
 using BelgradeATC.Core.Interfaces.Repositories;
 using BelgradeATC.Infrastructure;
 using BelgradeATC.Infrastructure.Auth;
@@ -41,7 +42,7 @@ builder.Services.AddHostedService<GroundCrewService>();
 builder.Services.AddSingleton<IWeatherStore, WeatherStore>();
 builder.Services.AddHostedService<WeatherService>();
 builder.Services.AddHttpClient();
-builder.Services.AddScoped<DbSeeder>();
+builder.Services.AddScoped<IDbSeeder, DbSeeder>();
 
 // Services
 builder.Services.AddScoped<IAircraftService, AircraftService>();
@@ -67,7 +68,7 @@ var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
 {
-    var seeder = scope.ServiceProvider.GetRequiredService<DbSeeder>();
+    var seeder = scope.ServiceProvider.GetRequiredService<IDbSeeder>();
     await seeder.Process();
 }
 

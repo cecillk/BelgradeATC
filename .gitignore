@@ -1,2 +1,13 @@
-bin/
-obj/
+# .NET Ignore Patterns
+[Bb]in/
+[Oo]bj/
+*.user
+*.userosscache
+*.sln.doccache
+
+# User-specific files
+.idea/
+.vscode/
+.DS_Store
+
+# End of .NET Ignore Patterns
