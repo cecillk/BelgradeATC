@@ -13,7 +13,8 @@ public class GroundCrewService(IServiceScopeFactory factory, ILogger<GroundCrewS
   {
     while (!stoppingToken.IsCancellationRequested)
     {
-      await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken);
+      try { await Task.Delay(TimeSpan.FromMinutes(1), stoppingToken); }
+      catch (TaskCanceledException) { break; }
       using var scope = factory.CreateScope();
       var _aircraftRepository = scope.ServiceProvider.GetRequiredService<IAircraftRepository>();
       var _parkingSpotRepository = scope.ServiceProvider.GetRequiredService<IParkingSpotRepository>();

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BelgradeATC.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ceaae46bf3a31468897df1cf23fa9027383c6757")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffd9192a3b21082148760b58ae29da3d051ebc81")]
 [assembly: System.Reflection.AssemblyProductAttribute("BelgradeATC.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BelgradeATC.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
