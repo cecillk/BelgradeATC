@@ -33,6 +33,15 @@ public class AircraftController(IMediator mediator, IWeatherStore weatherStore) 
     }
 
     [AllowAnonymous]
+    [HttpGet("/api/logs/recent")]
+    public async Task<IActionResult> RecentLogs()
+    {
+        var response = await mediator.Send(new GetRecentLogsQuery());
+
+        return Ok(response);
+    }
+
+    [AllowAnonymous]
     [HttpGet("/api/public/weather")]
     public IActionResult Weather()
     {
@@ -44,15 +53,5 @@ public class AircraftController(IMediator mediator, IWeatherStore weatherStore) 
 
         return Ok(request);
     }
-
-    [AllowAnonymous]
-    [HttpGet("/api/logs/recent")]
-    public async Task<IActionResult> RecentLogs()
-    {
-        var response = await mediator.Send(new GetRecentLogsQuery());
-
-        return Ok(response);
-    }
-
 
 }
