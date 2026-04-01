@@ -9,5 +9,6 @@ WORKDIR /app
 COPY --from=build /out .
 
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "BelgradeATC.API.dll"]
+ENTRYPOINT ["dotnet", "BelgradeATC.API.dll"] 
+
 

@@ -1,0 +1,16 @@
+2026-04-01 09:16:53 [INF] Executed DbCommand (37ms) [Parameters=[@type='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."OccupiedBy", p."SpotNumber", p."Type"
+FROM "ParkingSpots" AS p
+WHERE p."Type" = @type
+ORDER BY p."SpotNumber"
+2026-04-01 09:16:53 [INF] Executed DbCommand (2ms) [Parameters=[@type='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT p."Id", p."OccupiedBy", p."SpotNumber", p."Type"
+FROM "ParkingSpots" AS p
+WHERE p."Type" = @type
+ORDER BY p."SpotNumber"
+2026-04-01 09:16:53 [INF] User profile is available. Using '/Users/cecilklufio/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2026-04-01 09:16:54 [INF] Now listening on: http://localhost:5152
+2026-04-01 09:16:54 [INF] Application started. Press Ctrl+C to shut down.
+2026-04-01 09:16:54 [INF] Hosting environment: Development
+2026-04-01 09:16:54 [INF] Content root path: /Users/cecilklufio/BelgradeATC Project/BelgradeATC.API
+2026-04-01 09:17:31 [INF] Application is shutting down...
