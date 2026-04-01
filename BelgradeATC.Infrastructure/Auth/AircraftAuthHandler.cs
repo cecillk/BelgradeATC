@@ -22,7 +22,7 @@ public class AircraftAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> op
     protected override async Task<AuthenticateResult> HandleAuthenticateAsync()
     {
         // 1. Extracting call sign from route
-        var callSign = Request.RouteValues["call_sign"]?.ToString();
+        var callSign = Request.RouteValues["callSign"]?.ToString();
         if (string.IsNullOrEmpty(callSign))
             return AuthenticateResult.Fail("Missing call sign in route.");
 
@@ -85,7 +85,7 @@ public class AircraftAuthHandler(IOptionsMonitor<AuthenticationSchemeOptions> op
         return AuthenticateResult.Success(ticket);
     }
 
-    private static (bool IsValid, string? Error) VerifySignature(string publicKeyPem, string message, byte[] signature)
+    private static (bool IsValid, string? Error) VerifySignature(string publicKeyPem, string message, byte[]? signature)
     {
         try
         {
