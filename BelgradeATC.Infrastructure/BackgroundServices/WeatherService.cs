@@ -16,24 +16,25 @@ IHttpClientFactory httpclient,
 IConfiguration config,
 IWeatherStore weatherStore) : BackgroundService
 {
-  protected async override Task ExecuteAsync(CancellationToken stoppingToken)
+  protected override async Task ExecuteAsync(CancellationToken stoppingToken)
   {
     while (!stoppingToken.IsCancellationRequested)
     {
       await Task.Delay(TimeSpan.FromMinutes(5), stoppingToken);
       var apiKey = config["ExternalApis:Weather:ApiKey"];
 
-      using (var client = httpclient.CreateClient())
+      using var client = httpclient.CreateClient();
+      var url = $"https://api.openweathermap.org/data/2.5/weather?q=Belgrade&appid={apiKey}";
+
+      var response = await client.GetAsync(url);
+      if (response.IsSuccessStatusCode)
       {
-        var url = $"https://api.openweathermap.org/data/2.5/weather?q=Belgrade&appid={apiKey}";
+        var responseBody = await response.Content.ReadAsStringAsync();
 
-        var response = await client.GetAsync(url);
-        if (response.IsSuccessStatusCode)
+        var resp = JsonSerializer.Deserialize<OpenWeatherMapResponse>(responseBody);
+
+        if (resp != null)
         {
-          var responseBody = await response.Content.ReadAsStringAsync();
-
-          var resp = JsonSerializer.Deserialize<OpenWeatherMapResponse>(responseBody);
-
           WeatherResponse weatherResponse = new WeatherResponse
           {
             Description = resp.Weather[0].Description,
@@ -49,8 +50,9 @@ IWeatherStore weatherStore) : BackgroundService
 
 
           weatherStore.Update(weatherResponse);
-          logger.LogInformation("Weather data updated");
         }
+
+        logger.LogInformation("Weather data updated");
       }
     }
   }
